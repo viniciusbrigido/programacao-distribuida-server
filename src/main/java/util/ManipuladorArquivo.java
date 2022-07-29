@@ -15,7 +15,7 @@ public class ManipuladorArquivo {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(ENTRADA))) {
             while (true) {
                 try {
-                    bufferedReader.readLine();
+                    Integer.parseInt(bufferedReader.readLine());
                     qtdRegistros++;
                 } catch (NumberFormatException e) {
                     break;
@@ -27,7 +27,7 @@ public class ManipuladorArquivo {
         return qtdRegistros;
     }
 
-    public static void gravaResultados(List<Resultado> resultados){
+    public static void gravaResultados(List<Resultado> resultados) {
         try (FileWriter fileWriter = new FileWriter(SAIDA)) {
             PrintWriter arquivoGravacao = new PrintWriter(fileWriter);
 
